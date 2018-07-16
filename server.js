@@ -23,7 +23,7 @@ var app = require('./express.js')(db);
 // Bootstrap passport config
 require('./passport')();
 
-app.listen(app.get('port'), function(){
+app.listen(process.env.PORT, function(){
 	console.log('Server running');
 })
 

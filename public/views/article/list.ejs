@@ -6,7 +6,7 @@
     <h1> <%= articles[i].title %> </h1>
     <h5>By <%= articles[i].author%></h5>
     <h3><%= articles[i].summary%></h3>
-    <a href="<%=articles[i].link%>" target="blank">Read More</a>
+    <a href="/article/<%=articles[i]._id%>" target="blank">Read More</a>
     <p>
       Posted by <%= articles[i].postedBy.username%>
     </p>
