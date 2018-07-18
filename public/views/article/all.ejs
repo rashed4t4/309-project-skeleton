@@ -1,21 +1,21 @@
 <% include ../partials/header.ejs %>
-<div class="container">
+<div class="container text-center bg-primary">
   <h1>Article List </h1>
   <% if(user) {%>
-    <a href="/articles/new">Add New</a> 
+    <a href="/articles/new" class='btn btn-info'>Add New</a> 
   <% } %>
     <% for(var i=0; i<articles.length; i++) { %>
       <h1> <%= articles[i].title %> </h1>
       <h5>By <%= articles[i].author%> </h5>
       <h3><%= articles[i].summary%></h3>
-      <a href="/article/<%=articles[i]._id%>" target="blank">Read More</a>
+      <a href="/article/<%=articles[i]._id%>" target="blank" class='btn btn-info'>Read More</a>
       <p>
         Posted by <%= articles[i].postedBy.username%>
       </p>
       <p>
         <% if(user && String(user._id) == articles[i].postedBy._id) {%>
-        <a href="/articles/edit/<%=articles[i]._id%>"> Edit </a>
-        <button onclick="deleteArticle(<%= i %>)">Delete</button>
+        <a href="/articles/edit/<%=articles[i]._id%>" class='btn btn-info'> Edit </a>
+        <button onclick="deleteArticle(<%= i %>)" class='btn btn-info'>Delete</button>
         <% } %>
       </p>
     <% } %>
